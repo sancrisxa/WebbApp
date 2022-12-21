@@ -4,9 +4,10 @@
       layout:decorator="layout">
 
 <th:block layout:fragment="content">
-  <form action="">
+  <form th:action="@{/cities/{id}(id=${city.id})}" th:object="${city}" th:method="put">
+    <input type="hidden" th:field="*{id}" />
     <div class="form-group">
-      <input type="text" name="name" placeholder="City name:" class="form-control">
+      <input type="text" name="name" th:field="*{name}" placeholder="City name:" class="form-control" />
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Save</button>
