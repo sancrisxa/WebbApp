@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleag.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
-  <p>New Path</p>
+  <p>New Path <span th:text="' Hello ' + ${ name }"></span></p>
+    <ul>
+        <li th:each="name: ${list}">
+            <p th:text="${name}"></p>
+        </li>
+    </ul>
+
+<script th:src="@{/js/jquery-3.6.2.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
